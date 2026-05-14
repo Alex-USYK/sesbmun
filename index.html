@@ -1055,17 +1055,25 @@
         const subPageIds = ['sc-details', 'disec-details', 'sochum-details', 'legal-details', 'secretariat-page'];
 
         function showSubPage(targetId) {
-            // Hide all sub-pages first
-            document.querySelectorAll('.committee-page').forEach(p => p.classList.add('hidden'));
+    // Hide all sub-pages first
+    document.querySelectorAll('.committee-page').forEach(p => p.classList.add('hidden'));
 
-            const target = document.getElementById(targetId);
-            if (!target) return;
+    const target = document.getElementById(targetId);
+    if (!target) return;
 
-            target.classList.remove('hidden');
-            committeePages.classList.remove('hidden');
-            mainSite.classList.add('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    // Show selected page
+    target.classList.remove('hidden');
+    committeePages.classList.remove('hidden');
+    mainSite.classList.add('hidden');
+
+    // Scroll directly to the selected section
+    setTimeout(() => {
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }, 50);
+}
 
         function showMainSite() {
             committeePages.classList.add('hidden');

@@ -1101,6 +1101,12 @@
             document.getElementById('reg-success').classList.remove('hidden');
             e.target.reset();
         });
+        // ── Contact form ─────────────────────────────────────────────
+        document.getElementById('contact-form').addEventListener('submit', e => {
+            e.preventDefault();
+            document.getElementById('contact-success').classList.remove('hidden');
+            e.target.reset();
+        });
     </script>
 </body>
 </html>

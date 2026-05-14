@@ -356,10 +356,11 @@
 
     <!-- CHANGE YOUR EMAIL BELOW -->
     <form 
-        action="https://api.web3forms.com/submit" 
-        method="POST">
+    id="reg-form"
+    action="https://api.web3forms.com/submit" 
+    method="POST"
+    >
     <input type="hidden" name="access_key" value="23ad5c9c-0f1f-4beb-bbcb-9e6e27d6f03e">
-    </form>
 
         <!-- Optional Settings -->
         <input type="hidden" name="_subject" value="New MUN Registration">
@@ -434,7 +435,6 @@
         >
             Submit Registration
         </button>
-    </form>
 </div>
         </div>
     </section>
@@ -1099,13 +1099,6 @@
         document.getElementById('reg-form').addEventListener('submit', e => {
             e.preventDefault();
             document.getElementById('reg-success').classList.remove('hidden');
-            e.target.reset();
-        });
-
-        // ── Contact form ─────────────────────────────────────────────
-        document.getElementById('contact-form').addEventListener('submit', e => {
-            e.preventDefault();
-            document.getElementById('contact-success').classList.remove('hidden');
             e.target.reset();
         });
     </script>

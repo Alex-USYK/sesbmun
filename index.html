@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SESB-MUN 2026 | SESB Model United Nations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1580130732478-4e339fb3796f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .committee-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #1d4ed8;
+            border: 4px solid #bfdbfe;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 33px;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: #bfdbfe;
+        }
+        @media (max-width: 768px) {
+            .timeline::before { left: 18px; }
+            .timeline-item::before { left: -28px; }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-globe-europe text-2xl"></i>
+                    <a href="#" class="text-xl font-bold">SESB-MUN 2026</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="hover:text-blue-200 transition nav-link">About</a>
+                    <a href="#committees" class="hover:text-blue-200 transition nav-link">Committees</a>
+                    <a href="#schedule" class="hover:text-blue-200 transition nav-link">Schedule</a>
+                    <a href="#secretariat" class="hover:text-blue-200 transition nav-link">Secretariat</a>
+                    <a href="#registration" class="hover:text-blue-200 transition nav-link">Registration</a>
+                    <a href="#contact" class="hover:text-blue-200 transition nav-link">Contact</a>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#about" class="block py-2 hover:text-blue-200 transition nav-link">About</a>
+                <a href="#committees" class="block py-2 hover:text-blue-200 transition nav-link">Committees</a>
+                <a href="#schedule" class="block py-2 hover:text-blue-200 transition nav-link">Schedule</a>
+                <a href="#secretariat" class="block py-2 hover:text-blue-200 transition nav-link">Secretariat</a>
+                <a href="#registration" class="block py-2 hover:text-blue-200 transition nav-link">Registration</a>
+                <a href="#contact" class="block py-2 hover:text-blue-200 transition nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">SESB Model United Nations</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-8">July 1–3, 2026 | Dreilinden-Gymnasium Berlin</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Join 100+ delegates for an unforgettable diplomatic experience at SESB-MUN 2026</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#registration" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Register Now</a>
+                <a href="#committees" class="bg-transparent hover:bg-blue-800 text-white font-bold py-3 px-6 border-2 border-white rounded-lg transition duration-300">Explore Committees</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">About SESB-MUN 2026</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                         alt="MUN Conference" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Welcome to SESB-MUN 2026</h3>
+                    <p class="text-gray-700 mb-4">
+                        SESB-MUN (SESB Model United Nations) is a prestigious Model UN conference hosted by Dreilinden-Gymnasium Berlin, 
+                        bringing together over 100 delegates from schools across Germany and beyond. Our conference offers an immersive 
+                        diplomatic experience in the vibrant city of Berlin.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        From July 1–3, 2026, delegates will engage in intense debates, draft resolutions, and work collaboratively 
+                        to address pressing global issues. Our carefully designed committees cater to both beginners and experienced 
+                        MUN participants.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar-alt text-blue-600 mr-2"></i>
+                            <span>July 1–3, 2026</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>
+                            <span>Dreilinden-Gymnasium Berlin</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-blue-600 mr-2"></i>
+                            <span>100+ Delegates</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-flag text-blue-600 mr-2"></i>
+                            <span>4 Committees</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Committees Section -->
+    <section id="committees" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Committees</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    SESB-MUN 2026 features one Security Council and three General Assembly committees, each addressing critical global issues.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Security Council -->
+                <div class="committee-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-blue-800 flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">UN Security Council</h3>
+                        <p class="text-gray-600 mb-4">Addressing the threat of cyber warfare to international peace and security</p>
+                        <a href="#sc-details" class="committee-link text-blue-600 font-semibold hover:text-blue-800 transition">Learn more →</a>
+                    </div>
+                </div>
+                <!-- GA1 - DISEC -->
+                <div class="committee-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-green-700 flex items-center justify-center">
+                        <i class="fas fa-biohazard text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">GA1 - DISEC</h3>
+                        <p class="text-gray-600 mb-4">Disarmament and International Security Committee focusing on effective disarmament in post-conflict zones</p>
+                        <a href="#disec-details" class="committee-link text-blue-600 font-semibold hover:text-blue-800 transition">Learn more →</a>
+                    </div>
+                </div>
+                <!-- GA3 - SOCHUM -->
+                <div class="committee-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-purple-700 flex items-center justify-center">
+                        <i class="fas fa-hands-helping text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">GA3 - SOCHUM</h3>
+                        <p class="text-gray-600 mb-4">Committee combating human trafficking in conflict and post-conflict situations</p>
+                        <a href="#sochum-details" class="committee-link text-blue-600 font-semibold hover:text-blue-800 transition">Learn more →</a>
+                    </div>
+                </div>
+                <!-- GA6 - LEGAL -->
+                <div class="committee-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-red-700 flex items-center justify-center">
+                        <i class="fas fa-gavel text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">GA6 - LEGAL</h3>
+                        <p class="text-gray-600 mb-4">Legal Committee examining the continued feasibility of the right to asylum in the 21st century</p>
+                        <a href="#legal-details" class="committee-link text-blue-600 font-semibold hover:text-blue-800 transition">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Conference Schedule</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    Three days of diplomatic engagement, debate, and collaboration
+                </p>
+            </div>
+            <div class="relative timeline max-w-3xl mx-auto pl-16 md:pl-20">
+                <!-- Day 1 -->
+                <div class="relative timeline-item mb-12">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Day 1</span>
+                            <span class="ml-2 text-gray-600">July 1, 2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Opening Ceremony & Committee Sessions</h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            <li>09:00 - Registration</li>
+                            <li>10:30 - Opening Ceremony</li>
+                            <li>12:00 - Lunch</li>
+                            <li>13:30 - Committee Session I</li>
+                            <li>16:00 - Coffee Break</li>
+                            <li>16:30 - Committee Session II</li>
+                            <li>18:30 - End of Day</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Day 2 -->
+                <div class="relative timeline-item mb-12">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Day 2</span>
+                            <span class="ml-2 text-gray-600">July 2, 2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Intensive Committee Work</h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            <li>09:00 - Committee Session III</li>
+                            <li>11:00 - Coffee Break</li>
+                            <li>11:30 - Committee Session IV</li>
+                            <li>13:00 - Lunch</li>
+                            <li>14:30 - Committee Session V</li>
+                            <li>17:00 - End of Day</li>
+                            <li>19:00 - Social Event (Optional)</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Day 3 -->
+                <div class="relative timeline-item">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Day 3</span>
+                            <span class="ml-2 text-gray-600">July 3, 2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Closing Ceremony & Awards</h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            <li>10:00 - Committee Session VI</li>
+                            <li>13:00 - Coffee Break</li>
+                            <li>13:15 - Final Committee Reports</li>
+                            <li>14:00 - Award Presentations</li>
+                            <li>14:15 - Closing Ceremony</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secretariat Section -->
+    <section id="secretariat" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Secretariat</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    Meet the team behind SESB-MUN 2026 from Dreilinden-Gymnasium Berlin
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-64 bg-blue-100 flex items-center justify-center">
+                        <img src="images/kjars.png" alt="Artem Shevchenko" class="w-full h-full object-cover"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none" class="w-full h-full items-center justify-center">
+                            <i class="fas fa-user-tie text-blue-600 text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-1">Artem Shevchenko</h3>
+                        <p class="text-blue-600 font-semibold mb-3">Secretary General</p>
+                        <p class="text-gray-600">Oversees all conference operations and ensures smooth proceedings.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-64 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-user-graduate text-blue-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-1">Noel Sahyoun</h3>
+                        <p class="text-blue-600 font-semibold mb-3">Deputy Secretary General</p>
+                        <p class="text-gray-600">Supports the SG and manages committee coordination.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-64 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-tasks text-blue-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-1">To be announced</h3>
+                        <p class="text-blue-600 font-semibold mb-3">Chief of Staff</p>
+                        <p class="text-gray-600">Manages logistics, schedules, and volunteer coordination.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#secretariat-page" class="committee-link inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    View Full Secretariat
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Registration</h2>
+                <div class="w-24 h-1 bg-white mx-auto"></div>
+                <p class="max-w-2xl mx-auto mt-4">
+                    Secure your spot at SESB-MUN 2026 today. Early bird discounts available until March 31, 2026.
+                </p>
+            </div>
+            <div class="max-w-4xl mx-auto bg-white text-gray-800 rounded-lg shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-blue-800 text-white p-8">
+                        <h3 class="text-2xl font-bold mb-4">Registration Details</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-2"></i><span>Full access to all conference sessions</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-2"></i><span>Conference materials and delegate package</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-2"></i><span>Daily lunch and refreshments</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-2"></i><span>Social event access</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-2"></i><span>Certificate of participation</span></li>
+                        </ul>
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-2">Pricing</h4>
+                            <p><span class="line-through">€40</span> <span class="text-xl font-bold">€30</span></p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">Register Now</h3>
+                        <div id="reg-success" class="hidden mb-4 p-3 bg-green-100 text-green-800 rounded-lg">
+                            Thank you! Your registration has been received. We'll be in touch soon.
+                        </div>
+                        <form id="reg-form">
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="name">Full Name</label>
+                                <input type="text" id="name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="email">Email</label>
+                                <input type="email" id="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="school">School/Institution</label>
+                                <input type="text" id="school" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="committee">Preferred Committee</label>
+                                <select id="committee" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Select Committee</option>
+                                    <option value="sc">Security Council</option>
+                                    <option value="disec">GA1 - DISEC</option>
+                                    <option value="sochum">GA3 - SOCHUM</option>
+                                    <option value="legal">GA6 - LEGAL</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="experience">MUN Experience Level</label>
+                                <select id="experience" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Select Experience Level</option>
+                                    <option value="beginner">Beginner (0–1 conferences)</option>
+                                    <option value="intermediate">Intermediate (2–4 conferences)</option>
+                                    <option value="advanced">Advanced (5+ conferences)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                                Submit Registration
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Conference Venue</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    SESB-MUN 2026 will be hosted at Dreilinden-Gymnasium Berlin, a prestigious institution with excellent facilities.
+                </p>
+            </div>
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-md">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2432.687045193454!2d13.148689315802!3d52.410530679795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a85f7e3fcb0001%3A0x4a6f6f6e6e6e6e6e!2sDreilinden-Gymnasium!5e0!3m2!1sen!2sde!4v1620000000000!5m2!1sen!2sde"
+                                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Dreilinden-Gymnasium Berlin</h3>
+                    <p class="text-gray-700 mb-4">
+                        Located in the beautiful Wannsee district of Berlin, Dreilinden-Gymnasium offers state-of-the-art facilities 
+                        perfect for hosting our Model United Nations conference. The campus features modern classrooms, auditoriums, 
+                        and spaces for both formal debate and informal networking.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        The venue is easily accessible by public transportation, with several bus and train options available. 
+                        Accommodation recommendations for visiting delegations will be provided upon registration.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>
+                            <span>Dreilindenstraße 49, 14109 Berlin, Germany</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-subway text-blue-600 mr-2"></i>
+                            <span>S-Bahn: Wannsee Station (10 min walk)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-bus text-blue-600 mr-2"></i>
+                            <span>Bus: 118, 620 (Isoldestraße stop)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
+                <div class="w-24 h-1 bg-white mx-auto"></div>
+                <p class="max-w-2xl mx-auto mt-4">
+                    Have questions about SESB-MUN 2026? Reach out to our team for more information.
+                </p>
+            </div>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p>secretariat@sesb-mun.org</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold">Address</h4>
+                                <p>Dreilinden-Gymnasium Berlin<br>Dreilindenstraße 49<br>14109 Berlin, Germany</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://www.instagram.com/wmun.press/?hl=de" target="_blank"
+                               class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Send Us a Message</h3>
+                    <div id="contact-success" class="hidden mb-4 p-3 bg-blue-700 text-white rounded-lg border border-blue-500">
+                        Message sent! We'll get back to you soon.
+                    </div>
+                    <form id="contact-form">
+                        <div class="mb-4">
+                            <label class="block mb-2" for="contact-name">Name</label>
+                            <input type="text" id="contact-name" required class="w-full px-4 py-2 rounded-lg bg-blue-800 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block mb-2" for="contact-email">Email</label>
+                            <input type="email" id="contact-email" required class="w-full px-4 py-2 rounded-lg bg-blue-800 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block mb-2" for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" required class="w-full px-4 py-2 rounded-lg bg-blue-800 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block mb-2" for="contact-message">Message</label>
+                            <textarea id="contact-message" rows="4" required class="w-full px-4 py-2 rounded-lg bg-blue-800 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white hover:bg-gray-100 text-blue-900 font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Committee Sub-pages (hidden by default) -->
+    <div id="committee-pages" class="hidden">
+        <!-- Back button (shared) -->
+        <div class="bg-blue-900 text-white py-3 px-4 sticky top-16 z-40">
+            <div class="container mx-auto">
+                <button id="back-btn" class="flex items-center hover:text-blue-200 transition">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Main Page
+                </button>
+            </div>
+        </div>
+
+        <!-- Security Council Page -->
+        <div id="sc-details" class="committee-page hidden py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">UN Security Council</h2>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Committee Overview</h3>
+                        <p class="text-gray-700 mb-4">
+                            The United Nations Security Council (UNSC) is one of the six principal organs of the United Nations, 
+                            charged with ensuring international peace and security. At SESB-MUN 2026, the Security Council will 
+                            address pressing global security challenges with a special focus on emerging cyber warfare threats.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Agenda Items:</h4>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>Addressing the threat of cyber warfare to international peace and security</li>
+                                    <li>The situation in the South China Sea and maritime security</li>
+                                    <li>Crisis simulation (details to be announced during conference)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Committee Details:</h4>
+                                <ul class="text-gray-700">
+                                    <li class="flex items-center mb-1"><i class="fas fa-users mr-2 text-blue-600"></i><span>15 Member States (5 permanent, 10 non-permanent)</span></li>
+                                    <li class="flex items-center mb-1"><i class="fas fa-gavel mr-2 text-blue-600"></i><span>Rules of Procedure: Modified UN4MUN</span></li>
+                                    <li class="flex items-center"><i class="fas fa-user-tie mr-2 text-blue-600"></i><span>Chairs: TBA</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Country Matrix</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white border">
+                                <thead class="bg-blue-800 text-white">
+                                    <tr>
+                                        <th class="py-2 px-4 border">Country</th>
+                                        <th class="py-2 px-4 border">Status</th>
+                                        <th class="py-2 px-4 border">Difficulty</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-blue-50"><td class="py-2 px-4 border">China</td><td class="py-2 px-4 border">Permanent</td><td class="py-2 px-4 border">Advanced</td></tr>
+                                    <tr class="hover:bg-blue-50"><td class="py-2 px-4 border">France</td><td class="py-2 px-4 border">Permanent</td><td class="py-2 px-4 border">Advanced</td></tr>
+                                    <tr class="hover:bg-blue-50"><td class="py-2 px-4 border">Russia</td><td class="py-2 px-4 border">Permanent</td><td class="py-2 px-4 border">Advanced</td></tr>
+                                    <tr class="hover:bg-blue-50"><td class="py-2 px-4 border">United Kingdom</td><td class="py-2 px-4 border">Permanent</td><td class="py-2 px-4 border">Advanced</td></tr>
+                                    <tr class="hover:bg-blue-50"><td class="py-2 px-4 border">United States</td><td class="py-2 px-4 border">Permanent</td><td class="py-2 px-4 border">Advanced</td></tr>
+                                    <tr class="hover:bg-blue-50"><td class="py-2 px-4 border">Japan</td><td class="py-2 px-4 border">Non-permanent</td><td class="py-2 px-4 border">Intermediate</td></tr>
+                                    <tr class="hover:bg-blue-50"><td class="py-2 px-4 border">India</td><td class="py-2 px-4 border">Non-permanent</td><td class="py-2 px-4 border">Intermediate</td></tr>
+                                    <tr class="hover:bg-blue-50"><td class="py-2 px-4 border">Brazil</td><td class="py-2 px-4 border">Non-permanent</td><td class="py-2 px-4 border">Intermediate</td></tr>
+                                    <tr class="hover:bg-blue-50"><td class="py-2 px-4 border">Germany</td><td class="py-2 px-4 border">Non-permanent</td><td class="py-2 px-4 border">Intermediate</td></tr>
+                                    <tr class="hover:bg-blue-50"><td class="py-2 px-4 border">South Africa</td><td class="py-2 px-4 border">Non-permanent</td><td class="py-2 px-4 border">Beginner</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Preparation Materials</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-800 mb-2">Background Guide</h4>
+                                <p class="text-gray-700 mb-3">Download our comprehensive background guide for the Security Council.</p>
+                                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">Download PDF</a>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-800 mb-2">Research Resources</h4>
+                                <p class="text-gray-700 mb-3">Recommended reading and research materials for delegates.</p>
+                                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">View Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DISEC Page -->
+        <div id="disec-details" class="committee-page hidden py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">GA1 - DISEC</h2>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Committee Overview</h3>
+                        <p class="text-gray-700 mb-4">
+                            The Disarmament and International Security Committee (DISEC) is the First Committee of the United Nations 
+                            General Assembly. It deals with disarmament, global challenges and threats to peace that affect the 
+                            international community and seeks out solutions to the challenges in the international security regime.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Agenda Items:</h4>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>Effective disarmament in post-conflict zones</li>
+                                    <li>Nuclear non-proliferation and the future of arms control agreements</li>
+                                    <li>The militarization of artificial intelligence and autonomous weapons systems</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Committee Details:</h4>
+                                <ul class="text-gray-700">
+                                    <li class="flex items-center mb-1"><i class="fas fa-users mr-2 text-blue-600"></i><span>30–40 Member States</span></li>
+                                    <li class="flex items-center mb-1"><i class="fas fa-gavel mr-2 text-blue-600"></i><span>Rules of Procedure: Standard UN4MUN</span></li>
+                                    <li class="flex items-center"><i class="fas fa-user-tie mr-2 text-blue-600"></i><span>Chairs: TBA</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Preparation Materials</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-800 mb-2">Background Guide</h4>
+                                <p class="text-gray-700 mb-3">Download our comprehensive background guide for DISEC.</p>
+                                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">Download PDF</a>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-800 mb-2">Research Resources</h4>
+                                <p class="text-gray-700 mb-3">Recommended reading and research materials for delegates.</p>
+                                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">View Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SOCHUM Page -->
+        <div id="sochum-details" class="committee-page hidden py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">GA3 - SOCHUM</h2>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Committee Overview</h3>
+                        <p class="text-gray-700 mb-4">
+                            The Social, Humanitarian and Cultural Committee (SOCHUM) is the Third Committee of the United Nations 
+                            General Assembly. SOCHUM focuses on human rights, humanitarian affairs and social matters of 
+                            international character. At SESB-MUN 2026, SOCHUM will address pressing humanitarian challenges 
+                            including combating human trafficking.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Agenda Items:</h4>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>Combating human trafficking in conflict and post-conflict situations</li>
+                                    <li>Addressing the global refugee crisis and protecting displaced populations</li>
+                                    <li>Preserving cultural heritage in conflict zones</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Committee Details:</h4>
+                                <ul class="text-gray-700">
+                                    <li class="flex items-center mb-1"><i class="fas fa-users mr-2 text-blue-600"></i><span>30–40 Member States</span></li>
+                                    <li class="flex items-center mb-1"><i class="fas fa-gavel mr-2 text-blue-600"></i><span>Rules of Procedure: Standard UN4MUN</span></li>
+                                    <li class="flex items-center"><i class="fas fa-user-tie mr-2 text-blue-600"></i><span>Chairs: TBA</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Preparation Materials</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-800 mb-2">Background Guide</h4>
+                                <p class="text-gray-700 mb-3">Download our comprehensive background guide for SOCHUM.</p>
+                                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">Download PDF</a>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-800 mb-2">Research Resources</h4>
+                                <p class="text-gray-700 mb-3">Recommended reading and research materials for delegates.</p>
+                                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">View Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEGAL Page -->
+        <div id="legal-details" class="committee-page hidden py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">GA6 - LEGAL</h2>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Committee Overview</h3>
+                        <p class="text-gray-700 mb-4">
+                            The Sixth Committee of the United Nations General Assembly is the primary forum for the consideration 
+                            of legal questions in the General Assembly. At SESB-MUN 2026, the Legal Committee will examine 
+                            the continued feasibility of the right to asylum in the 21st century.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Agenda Items:</h4>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>The continued feasibility of the right to asylum in the 21st century</li>
+                                    <li>Legal frameworks for addressing climate displacement</li>
+                                    <li>The responsibility to protect (R2P) and its implementation challenges</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Committee Details:</h4>
+                                <ul class="text-gray-700">
+                                    <li class="flex items-center mb-1"><i class="fas fa-users mr-2 text-blue-600"></i><span>30–40 Member States</span></li>
+                                    <li class="flex items-center mb-1"><i class="fas fa-gavel mr-2 text-blue-600"></i><span>Rules of Procedure: Standard UN4MUN</span></li>
+                                    <li class="flex items-center"><i class="fas fa-user-tie mr-2 text-blue-600"></i><span>Chairs: TBA</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Preparation Materials</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-800 mb-2">Background Guide</h4>
+                                <p class="text-gray-700 mb-3">Download our comprehensive background guide for the Legal Committee.</p>
+                                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">Download PDF</a>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-800 mb-2">Research Resources</h4>
+                                <p class="text-gray-700 mb-3">Recommended reading and research materials for delegates.</p>
+                                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">View Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secretariat Full Page -->
+        <div id="secretariat-page" class="committee-page hidden py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Secretariat</h2>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                        Meet the dedicated team from Dreilinden-Gymnasium Berlin organizing SESB-MUN 2026
+                    </p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6">Executive Team</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                                <div class="h-48 bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-user-tie text-blue-600 text-6xl"></i>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-bold text-lg">Artem Shevchenko</h4>
+                                    <p class="text-blue-600 font-semibold">Secretary General</p>
+                                    <p class="text-gray-600 mt-2">Responsible for overall conference management and coordination.</p>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                                <div class="h-48 bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-user-graduate text-blue-600 text-6xl"></i>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-bold text-lg">Noel Sahyoun</h4>
+                                    <p class="text-blue-600 font-semibold">Deputy Secretary General</p>
+                                    <p class="text-gray-600 mt-2">Supports the SG and oversees committee coordination.</p>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                                <div class="h-48 bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-tasks text-blue-600 text-6xl"></i>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-bold text-lg">To be announced</h4>
+                                    <p class="text-blue-600 font-semibold">Chief of Staff</p>
+                                    <p class="text-gray-600 mt-2">Manages logistics, schedules, and volunteer coordination.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6">Committee Directors</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
+                                <div class="h-40 bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-shield-alt text-blue-600 text-5xl"></i>
+                                </div>
+                                <div class="p-4"><h4 class="font-bold">Security Council</h4><p class="text-blue-600 text-sm font-semibold">Director: TBA</p></div>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
+                                <div class="h-40 bg-green-100 flex items-center justify-center">
+                                    <i class="fas fa-biohazard text-green-600 text-5xl"></i>
+                                </div>
+                                <div class="p-4"><h4 class="font-bold">GA1 - DISEC</h4><p class="text-green-600 text-sm font-semibold">Director: TBA</p></div>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
+                                <div class="h-40 bg-purple-100 flex items-center justify-center">
+                                    <i class="fas fa-hands-helping text-purple-600 text-5xl"></i>
+                                </div>
+                                <div class="p-4"><h4 class="font-bold">GA3 - SOCHUM</h4><p class="text-purple-600 text-sm font-semibold">Director: TBA</p></div>
+                            </div>
+                            <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
+                                <div class="h-40 bg-red-100 flex items-center justify-center">
+                                    <i class="fas fa-gavel text-red-600 text-5xl"></i>
+                                </div>
+                                <div class="p-4"><h4 class="font-bold">GA6 - LEGAL</h4><p class="text-red-600 text-sm font-semibold">Director: TBA</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6">Other Teams</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-blue-800 mb-2">Logistics Team</h4>
+                                <p class="text-gray-700">Responsible for venue setup, materials, and conference operations.</p>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-blue-800 mb-2">IT Team</h4>
+                                <p class="text-gray-700">Manages conference technology, website, and digital resources.</p>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-blue-800 mb-2">Media Team</h4>
+                                <p class="text-gray-700">Handles photography, social media, and conference publicity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main site wrapper (toggled with committee pages) -->
+    <div id="main-site">
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">SESB-MUN 2026</h3>
+                        <p class="text-gray-400">
+                            SESB Model United Nations conference hosted by Dreilinden-Gymnasium Berlin from July 1–3, 2026.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition nav-link">About</a></li>
+                            <li><a href="#committees" class="text-gray-400 hover:text-white transition nav-link">Committees</a></li>
+                            <li><a href="#schedule" class="text-gray-400 hover:text-white transition nav-link">Schedule</a></li>
+                            <li><a href="#secretariat" class="text-gray-400 hover:text-white transition nav-link">Secretariat</a></li>
+                            <li><a href="#registration" class="text-gray-400 hover:text-white transition nav-link">Registration</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Committees</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#sc-details" class="committee-link text-gray-400 hover:text-white transition">Security Council</a></li>
+                            <li><a href="#disec-details" class="committee-link text-gray-400 hover:text-white transition">GA1 - DISEC</a></li>
+                            <li><a href="#sochum-details" class="committee-link text-gray-400 hover:text-white transition">GA3 - SOCHUM</a></li>
+                            <li><a href="#legal-details" class="committee-link text-gray-400 hover:text-white transition">GA6 - LEGAL</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Contact</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-start"><i class="fas fa-envelope mt-1 mr-2"></i><span>secretariat@sesb-mun.org</span></li>
+                            <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2"></i><span>Dreilinden-Gymnasium Berlin<br>Dreilindenstraße 49<br>14109 Berlin, Germany</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400">© 2026 SESB-MUN – SESB Model United Nations. All rights reserved.</p>
+                    <div class="flex space-x-4 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/wmun.press/?hl=de" target="_blank" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // ── Mobile menu ──────────────────────────────────────────────
+        const mobileMenuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu    = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when any nav link is clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // ── Committee sub-pages ──────────────────────────────────────
+        const committeePages = document.getElementById('committee-pages');
+        const mainSite       = document.getElementById('main-site');
+        const backBtn        = document.getElementById('back-btn');
+
+        const subPageIds = ['sc-details', 'disec-details', 'sochum-details', 'legal-details', 'secretariat-page'];
+
+        function showSubPage(targetId) {
+            // Hide all sub-pages first
+            document.querySelectorAll('.committee-page').forEach(p => p.classList.add('hidden'));
+
+            const target = document.getElementById(targetId);
+            if (!target) return;
+
+            target.classList.remove('hidden');
+            committeePages.classList.remove('hidden');
+            mainSite.classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showMainSite() {
+            committeePages.classList.add('hidden');
+            mainSite.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Attach to all committee links
+        document.querySelectorAll('.committee-link').forEach(link => {
+            link.addEventListener('click', e => {
+                const targetId = link.getAttribute('href').replace('#', '');
+                if (subPageIds.includes(targetId)) {
+                    e.preventDefault();
+                    showSubPage(targetId);
+                }
+            });
+        });
+
+        // Back button
+        backBtn.addEventListener('click', showMainSite);
+
+        // ── Registration form ────────────────────────────────────────
+        document.getElementById('reg-form').addEventListener('submit', e => {
+            e.preventDefault();
+            document.getElementById('reg-success').classList.remove('hidden');
+            e.target.reset();
+        });
+
+        // ── Contact form ─────────────────────────────────────────────
+        document.getElementById('contact-form').addEventListener('submit', e => {
+            e.preventDefault();
+            document.getElementById('contact-success').classList.remove('hidden');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
